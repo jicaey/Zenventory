@@ -11,16 +11,28 @@ import UIKit
 private let reuseIdentifier = "Cell"
 
 class InventoryCollectionViewController: UICollectionViewController {
-
+    let store = DataStore.sharedInstance
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        generateTestData()
 
         // Register cell classes
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
     }
 
     func generateTestData() {
-        let pen: Item = Item
+        let pen: Item = EverydayCarry(name: "Fisher Space Pen", notes: "Raw Brass")
+        let shirt: Item = Wardrobe(name: "Sweater", notes: "Blue Cashmere")
+        let shoes: Item = Wardrobe(name: "Winter Boots", notes: "Grey Redwings")
+        let incense: Item = Consumables(name: "Nagchampa Incense", notes: "Incense Cones")
+        let macbook: Item = Electronics(name: "Macbook Air", notes: "11-inch, Early 2015")
+        let scissors: Item = Core(name: "Scissors", notes: "Clauss Titanium")
+        
+        store.inventory.append(contentsOf: [pen, shirt, shoes, incense, macbook, scissors])
+        print(" Inventory Array: \(store.inventory)")
+        
+        
     }
     
     /*

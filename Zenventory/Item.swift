@@ -10,57 +10,67 @@ import Foundation
 
 protocol Item {
     var name: String { get }
-    var description: String { get }
+    var notes: String { get }
     var category: Category { get }
-    
-    init()
 }
 
-struct Wardrobe {
+struct Wardrobe: Item {
     var name: String
-    var description: String
+    var notes: String
     var category: Category
     
-    init(name: String, description: String) {
+    init(name: String, notes: String) {
         self.name = name
-        self.description = description
+        self.notes = notes
         self.category = Category.wardrobe
     }
 }
 
-struct EverydayCarry {
+struct EverydayCarry: Item {
     var name: String
-    var description: String
+    var notes: String
     var category: Category
     
-    init(name: String, description: String) {
+    init(name: String, notes: String) {
         self.name = name
-        self.description = description
+        self.notes = notes
         self.category = Category.everydayCarry
     }
 }
 
-struct Core {
+struct Core: Item {
     var name: String
-    var description: String
+    var notes: String
     var category: Category
     
-    init(name: String, description: String) {
+    init(name: String, notes: String) {
         self.name = name
-        self.description = description
+        self.notes = notes
         self.category = Category.core
     }
 }
 
-struct Consumables {
+struct Consumables: Item {
     var name: String
-    var description: String
+    var notes: String
     var category: Category
     
-    init(name: String, description: String) {
+    init(name: String, notes: String) {
         self.name = name
-        self.description = description
+        self.notes = notes
         self.category = Category.consumables
+    }
+}
+
+struct Electronics: Item {
+    var name: String
+    var notes: String
+    var category: Category
+    
+    init(name: String, notes: String) {
+        self.name = name
+        self.notes = notes
+        self.category = Category.electronics
     }
 }
 
@@ -69,5 +79,6 @@ enum Category {
     case everydayCarry
     case core
     case consumables
+    case electronics
 }
 
