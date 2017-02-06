@@ -14,7 +14,6 @@
 		70834D361E48F956006E6954 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70834D351E48F956006E6954 /* Assets.xcassets */; };
 		70834D391E48F956006E6954 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70834D371E48F956006E6954 /* LaunchScreen.storyboard */; };
 		70834D411E48FD6A006E6954 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70834D401E48FD6A006E6954 /* Item.swift */; };
-		70834D471E4908B8006E6954 /* InventoryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70834D461E4908B8006E6954 /* InventoryCollectionViewController.swift */; };
 		70E515411E49114300CCF7E6 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E515401E49114300CCF7E6 /* DataStore.swift */; };
 /* End PBXBuildFile section */
 
@@ -28,7 +27,6 @@
 		70834D381E48F956006E6954 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		70834D3A1E48F956006E6954 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		70834D401E48FD6A006E6954 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
-		70834D461E4908B8006E6954 /* InventoryCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InventoryCollectionViewController.swift; path = ../InventoryCollectionViewController.swift; sourceTree = "<group>"; };
 		70E515401E49114300CCF7E6 /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -62,7 +60,6 @@
 		70834D2A1E48F956006E6954 /* Zenventory */ = {
 			isa = PBXGroup;
 			children = (
-				70834D461E4908B8006E6954 /* InventoryCollectionViewController.swift */,
 				70E515401E49114300CCF7E6 /* DataStore.swift */,
 				70834D2B1E48F956006E6954 /* AppDelegate.swift */,
 				70834D401E48FD6A006E6954 /* Item.swift */,
@@ -149,7 +146,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70834D471E4908B8006E6954 /* InventoryCollectionViewController.swift in Sources */,
 				70E515411E49114300CCF7E6 /* DataStore.swift in Sources */,
 				70834D2E1E48F956006E6954 /* ViewController.swift in Sources */,
 				70834D2C1E48F956006E6954 /* AppDelegate.swift in Sources */,
