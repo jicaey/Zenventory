@@ -20,7 +20,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Bypass Storyboard
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
-        window?.rootViewController = UINavigationController(rootViewController: ViewController())
+        
+        // Adds Collectionview layout
+        let layout = UICollectionViewFlowLayout()
+        window?.rootViewController = UINavigationController(rootViewController: HomeViewController(collectionViewLayout: layout))
         return true
     }
 
