@@ -85,15 +85,21 @@ class itemNameCell: UICollectionViewCell {
     func setupViews() {
         addSubview(thumbnailItemImageView)
         addSubview(separatorView)
-
+        addSubview(categoryImageView)
+        
         backgroundColor = UIColor.lightGray
         
         // Auto Layout with Visual Format
         // TODO: - Readup on this contraint format
-        addContraintsWith(format: "H:|-16-[v0]-16-|", views: [thumbnailItemImageView])
-        addContraintsWith(format: "V:|-16-[v0]-16-[v1(1)]|", views: [thumbnailItemImageView, separatorView])
         
+        // horizontal contraints
+        addContraintsWith(format: "H:|-16-[v0]-16-|", views: [thumbnailItemImageView])
         addContraintsWith(format: "H:|[v0]|", views: [separatorView])
+        addContraintsWith(format: "H:|-16-[v0(44)]", views: [categoryImageView])
+        
+        // vertical contraints
+        addContraintsWith(format: "V:|-16-[v0]-8-[v1(44)]-16-[v2(1)]|", views: [thumbnailItemImageView, categoryImageView, separatorView])
+        
     }
 }
 
