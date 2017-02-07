@@ -82,10 +82,33 @@ class itemNameCell: UICollectionViewCell {
         return imageView
     }()
     
+    // TODO: - Readup on closures
+    // different contraint type to ensure proper scaling
+    let itemNameLabel: UILabel = {
+        let label = UILabel()
+        label.backgroundColor = UIColor.white
+        label.translatesAutoresizingMaskIntoConstraints = false
+        
+        return label
+    }()
+    
+    // TODO: - Readup on closures
+    // different contraint type to ensure proper scaling
+    let descriptionTextView: UITextView = {
+        let textView = UITextView()
+        textView.backgroundColor = UIColor.yellow
+        textView.translatesAutoresizingMaskIntoConstraints = false
+        
+        return textView
+    }()
+
+    
     func setupViews() {
         addSubview(thumbnailItemImageView)
         addSubview(separatorView)
         addSubview(categoryImageView)
+        addSubview(itemNameLabel)
+        addSubview(descriptionTextView)
         
         backgroundColor = UIColor.lightGray
         
@@ -100,6 +123,25 @@ class itemNameCell: UICollectionViewCell {
         // vertical contraints
         addContraintsWith(format: "V:|-16-[v0]-8-[v1(44)]-16-[v2(1)]|", views: [thumbnailItemImageView, categoryImageView, separatorView])
         
+        // itemNameLabel contraints
+        // top
+        addConstraint(NSLayoutConstraint(item: itemNameLabel, attribute: .top, relatedBy: .equal, toItem: thumbnailItemImageView, attribute: .bottom, multiplier: 1, constant: 8))
+        // left
+        addConstraint(NSLayoutConstraint(item: itemNameLabel, attribute: .left, relatedBy: .equal, toItem: categoryImageView, attribute: .right, multiplier: 1, constant: 8))
+        // right
+        addConstraint(NSLayoutConstraint(item: itemNameLabel, attribute: .right, relatedBy: .equal, toItem: thumbnailItemImageView, attribute: .right, multiplier: 1, constant: 0))
+        // height
+        addConstraint(NSLayoutConstraint(item: itemNameLabel, attribute: .height, relatedBy: .equal, toItem: self, attribute: .height, multiplier: 0, constant: 20))
+        
+        // descriptionTextView contraints
+        // top
+        addConstraint(NSLayoutConstraint(item: descriptionTextView, attribute: .top, relatedBy: .equal, toItem: itemNameLabel, attribute: .bottom, multiplier: 1, constant: 4))
+        // left
+        addConstraint(NSLayoutConstraint(item: descriptionTextView, attribute: .left, relatedBy: .equal, toItem: categoryImageView, attribute: .right, multiplier: 1, constant: 8))
+        // right
+        addConstraint(NSLayoutConstraint(item: descriptionTextView, attribute: .right, relatedBy: .equal, toItem: thumbnailItemImageView, attribute: .right, multiplier: 1, constant: 0))
+        // height
+        addConstraint(NSLayoutConstraint(item: descriptionTextView, attribute: .height, relatedBy: .equal, toItem: self, attribute: .height, multiplier: 0, constant: 20))
     }
 }
 
