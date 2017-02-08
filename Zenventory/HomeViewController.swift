@@ -23,7 +23,7 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         titleLabel.font = UIFont.systemFont(ofSize: Constants.FontSizes.large)
         navigationItem.titleView = titleLabel
             
-        collectionView?.backgroundColor = UIColor.white
+        collectionView?.backgroundColor = Constants.Colors.cream
         
         // Register cell identifier
         collectionView?.register(ItemCell.self, forCellWithReuseIdentifier: "cell")

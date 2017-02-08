@@ -50,6 +50,7 @@ class ItemCell: UICollectionViewCell {
     let itemNameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = Constants.Colors.green
         label.text = "Item Name"
         
         return label
@@ -61,7 +62,8 @@ class ItemCell: UICollectionViewCell {
         textView.translatesAutoresizingMaskIntoConstraints = false
         textView.text = "Item Description • Category: Consumable • Last Date Used: 2 days ago"
         textView.textContainerInset = UIEdgeInsets(top: 0, left: -4, bottom: 0, right: 0)
-        textView.textColor = UIColor.lightGray
+        textView.textColor = Constants.Colors.midBlue
+        textView.backgroundColor = Constants.Colors.cream
         
         return textView
     }()
