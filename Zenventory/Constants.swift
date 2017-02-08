@@ -12,10 +12,16 @@ import UIKit
 struct Constants {
     
     struct Colors {
-        static let green = UIColor(red: 10, green: 57, blue: 41, alpha: 1)
-        static let darkBlue = UIColor(red: 79, green: 143, blue: 151, alpha: 1)
-        static let midBlue = UIColor(red: 149, green: 187, blue: 182, alpha: 1)
-        static let lightBlue = UIColor(red: 202, green: 217, blue: 205, alpha: 1)
-        static let whiteBlue = UIColor(red: 248, green: 238, blue: 212, alpha: 1)
+        static let green = UIColor(red: 0.04, green: 0.22, blue: 0.16, alpha: 1.0)
+        static let darkBlue = UIColor(red: 0.31, green: 0.56, blue: 0.59, alpha: 1.0)
+        static let midBlue = UIColor(red: 0.58, green: 0.73, blue: 0.71, alpha: 1.0)
+        static let lightBlue = UIColor(red: 0.79, green: 0.85, blue: 0.80, alpha: 1.0)
+        static let cream = UIColor(red: 0.97, green: 0.93, blue: 0.83, alpha: 1.0)
+    }
+    
+    struct FontSizes {
+        static let large = CGFloat(20)
+        static let medium = CGFloat(16)
+        static let small = CGFloat(14)
     }
 }

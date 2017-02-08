@@ -24,6 +24,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Adds Collectionview layout
         let layout = UICollectionViewFlowLayout()
         window?.rootViewController = UINavigationController(rootViewController: HomeViewController(collectionViewLayout: layout))
+        
+        // navigation bar tweaks
+        UINavigationBar.appearance().barTintColor = Constants.Colors.darkBlue
+        
         return true
     }
 
