@@ -15,16 +15,16 @@ class DataStore {
     var inventory = [Item]()
     
     func generateTestData() {
-        let pen: Item = EverydayCarry(name: "Fisher Space Pen", notes: "Raw Brass")
-        let shirt: Item = Wardrobe(name: "Sweater", notes: "Blue Cashmere")
-        let shoes: Item = Wardrobe(name: "Winter Boots", notes: "Grey Redwings")
-        let incense: Item = Consumables(name: "Nagchampa Incense", notes: "Incense Cones")
-        let macbook: Item = Electronics(name: "Macbook Air", notes: "11-inch, Early 2015")
-        let scissors: Item = Core(name: "Scissors", notes: "Clauss Titanium")
+        let pen = Item(name: "Sweater", notes: "Blue Cashmere", category: Category.wardrobe)
+        let shirt = Item(name: "Fisher Space Pen", notes: "Raw Brass Bullet", category: Category.everydayCarry)
+        let shoes = Item(name: "Grey Redwings", notes: "Winter Boots", category: Category.wardrobe)
+        let incense = Item(name: "Incense Cones", notes: "Nagchampa", category: Category.consumables)
+        let macbook = Item(name: "Macbook Air", notes: "11-inch, Early 2015", category: Category.electronics)
+        let scissors = Item(name: "Scissors", notes: "Clauss Titanium", category: Category.core)
+        let batteries = Item(name: "Vape Batteries", notes: "Six 18650s", category: Category.consumables)
         
-        inventory.append(contentsOf: [pen, shirt, shoes, incense, macbook, scissors])
+        inventory.append(contentsOf: [pen, shirt, shoes, incense, macbook, scissors, batteries])
         print(" Inventory Array: \(inventory)")
-        
         
     }
 

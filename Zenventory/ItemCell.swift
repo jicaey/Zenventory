@@ -39,6 +39,7 @@ class ItemCell: UICollectionViewCell {
     let categoryImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "placeholderCategoryImage")
+        imageView.contentMode = .scaleAspectFit
         // half of the width and height of the image size
         imageView.layer.cornerRadius = 22
         imageView.layer.masksToBounds = true

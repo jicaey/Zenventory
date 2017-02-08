@@ -7,72 +7,20 @@
 //
 
 import Foundation
+import UIKit
 
-protocol Item {
-    var name: String { get }
-    var notes: String { get }
-    var category: Category { get }
-}
-
-struct Wardrobe: Item {
+struct Item {
     var name: String
     var notes: String
     var category: Category
     
-    init(name: String, notes: String) {
+    init(name: String, notes: String, category: Category) {
         self.name = name
         self.notes = notes
-        self.category = Category.wardrobe
+        self.category = category
     }
 }
 
-struct EverydayCarry: Item {
-    var name: String
-    var notes: String
-    var category: Category
-    
-    init(name: String, notes: String) {
-        self.name = name
-        self.notes = notes
-        self.category = Category.everydayCarry
-    }
-}
-
-struct Core: Item {
-    var name: String
-    var notes: String
-    var category: Category
-    
-    init(name: String, notes: String) {
-        self.name = name
-        self.notes = notes
-        self.category = Category.core
-    }
-}
-
-struct Consumables: Item {
-    var name: String
-    var notes: String
-    var category: Category
-    
-    init(name: String, notes: String) {
-        self.name = name
-        self.notes = notes
-        self.category = Category.consumables
-    }
-}
-
-struct Electronics: Item {
-    var name: String
-    var notes: String
-    var category: Category
-    
-    init(name: String, notes: String) {
-        self.name = name
-        self.notes = notes
-        self.category = Category.electronics
-    }
-}
 
 enum Category {
     case wardrobe
@@ -80,5 +28,16 @@ enum Category {
     case core
     case consumables
     case electronics
+    
+    // TODO: - unwrap
+    var image: UIImage {
+        switch self {
+        case .wardrobe: return UIImage(named: "shoes")!
+        case .everydayCarry: return UIImage(named: "bag")!
+        case .core: return UIImage(named: "dolly")!
+        case .consumables: return UIImage(named: "recycle")!
+        case .electronics: return UIImage(named: "phone")!
+        }
+    }
 }
 

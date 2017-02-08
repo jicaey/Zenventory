@@ -9,7 +9,9 @@
 import UIKit
 
 class HomeViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
-
+    
+    let store = DataStore.sharedInstance
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,20 +24,43 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         titleLabel.textColor = Constants.Colors.cream
         titleLabel.font = UIFont.systemFont(ofSize: Constants.FontSizes.large)
         navigationItem.titleView = titleLabel
-            
+        
         collectionView?.backgroundColor = Constants.Colors.cream
         
         // Register cell identifier
         collectionView?.register(ItemCell.self, forCellWithReuseIdentifier: "cell")
+        
+        // test data
+        store.generateTestData()
+        
+        // menuBar
+        setupMenuBar()
     }
+    
+    let menuBar: MenuBar = {
+        let menuBar = MenuBar()
+        return menuBar
+    }()
+    
+    private func setupMenuBar() {
+        view.addSubview(menuBar)
+        view.addContraintsWith(format: "H:|[v0]|", views: [menuBar])
+        view.addContraintsWith(format: "V:|[v0(50)]", views: [menuBar])
+    }
+    
     
     // Mark: - UICollectionViewController
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return store.inventory.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ItemCell
+        
+        cell.itemNameLabel.text = "\(store.inventory[indexPath.row].name)"
+        cell.descriptionTextView.text = "\(store.inventory[indexPath.row].notes)"
+        cell.categoryImageView.image = store.inventory[indexPath.row].category.image
+        
         
         return cell
     }
