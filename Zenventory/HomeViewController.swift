@@ -14,7 +14,7 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         super.viewDidLoad()
         
         navigationItem.title = "Home"
-//        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.isTranslucent = false
         
         // Set navigationBar text color
         let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width - 32, height: view.frame.height))
@@ -155,19 +155,6 @@ class itemNameCell: UICollectionViewCell {
     }
 }
 
-extension UIView {
-    func addContraintsWith(format: String, views: [UIView]) {
-        var viewsDictionary = [String : UIView]()
-        for (index, view) in views.enumerated() {
-            let key = "v\(index)"
-            view.translatesAutoresizingMaskIntoConstraints = false
-            viewsDictionary[key] = view
-        }
-        
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: format, options: NSLayoutFormatOptions(), metrics: nil, views: viewsDictionary))
-    }
-    
-}
 
 
 

@@ -28,6 +28,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // navigation bar tweaks
         UINavigationBar.appearance().barTintColor = Constants.Colors.darkBlue
         
+        // status bar tweaks
+        application.statusBarStyle = .lightContent
+        
+        let statusBarBackgroundView = UIView()
+        statusBarBackgroundView.backgroundColor = Constants.Colors.green
+        statusBarBackgroundView.layer.opacity = 0.15
+        window?.addSubview(statusBarBackgroundView)
+        window?.addContraintsWith(format: "H:|[v0]|", views: [statusBarBackgroundView])
+        window?.addContraintsWith(format: "V:|[v0(20)]|", views: [statusBarBackgroundView])
+        
         return true
     }
 
