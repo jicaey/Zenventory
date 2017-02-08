@@ -34,7 +34,9 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     // MARK: - UICollectionViewDelegateFlowLayout
     // Change Cell Size
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let cellSize = CGSize(width: view.frame.width, height: 200)
+        // Calculate aspect ratio for the image
+        let height = (view.frame.width - 16 - 16) * 9 / 16
+        let cellSize = CGSize(width: view.frame.width, height: height + 16 + 68)
         
         return cellSize
     }
@@ -58,46 +60,49 @@ class itemNameCell: UICollectionViewCell {
         fatalError("init(coder:) has not been initialized")
     }
     
-    // TODO: - Readup on closures
     let thumbnailItemImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.backgroundColor = UIColor.blue
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        // adds image to view from assets
+        imageView.image = UIImage(named: "jaceWayland")
         
         return imageView
     }()
     
-    // TODO: - Readup on closures
     let separatorView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.red
+        view.backgroundColor = UIColor(red: 230/255, green: 230/255, blue: 230/255, alpha: 1)
     
         return view
     }()
     
-    // TODO: - Readup on closures
     let categoryImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.backgroundColor = UIColor.green
+        imageView.image = UIImage(named: "placeholderCategoryImage")
+        // half of the width and height of the image size
+        imageView.layer.cornerRadius = 22
+        imageView.layer.masksToBounds = true
         
         return imageView
     }()
     
-    // TODO: - Readup on closures
     // different contraint type to ensure proper scaling
     let itemNameLabel: UILabel = {
         let label = UILabel()
-        label.backgroundColor = UIColor.white
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Item Name"
         
         return label
     }()
     
-    // TODO: - Readup on closures
     // different contraint type to ensure proper scaling
     let descriptionTextView: UITextView = {
         let textView = UITextView()
-        textView.backgroundColor = UIColor.yellow
         textView.translatesAutoresizingMaskIntoConstraints = false
+        textView.text = "Item Description • Category: Consumable • Last Date Used: 2 days ago"
+        textView.textContainerInset = UIEdgeInsets(top: 0, left: -4, bottom: 0, right: 0)
+        textView.textColor = UIColor.lightGray
         
         return textView
     }()
@@ -110,19 +115,15 @@ class itemNameCell: UICollectionViewCell {
         addSubview(itemNameLabel)
         addSubview(descriptionTextView)
         
-        backgroundColor = UIColor.lightGray
-        
         // Auto Layout with Visual Format
         // TODO: - Readup on this contraint format
-        
         // horizontal contraints
         addContraintsWith(format: "H:|-16-[v0]-16-|", views: [thumbnailItemImageView])
         addContraintsWith(format: "H:|[v0]|", views: [separatorView])
         addContraintsWith(format: "H:|-16-[v0(44)]", views: [categoryImageView])
-        
         // vertical contraints
         addContraintsWith(format: "V:|-16-[v0]-8-[v1(44)]-16-[v2(1)]|", views: [thumbnailItemImageView, categoryImageView, separatorView])
-        
+       
         // itemNameLabel contraints
         // top
         addConstraint(NSLayoutConstraint(item: itemNameLabel, attribute: .top, relatedBy: .equal, toItem: thumbnailItemImageView, attribute: .bottom, multiplier: 1, constant: 8))
@@ -141,7 +142,7 @@ class itemNameCell: UICollectionViewCell {
         // right
         addConstraint(NSLayoutConstraint(item: descriptionTextView, attribute: .right, relatedBy: .equal, toItem: thumbnailItemImageView, attribute: .right, multiplier: 1, constant: 0))
         // height
-        addConstraint(NSLayoutConstraint(item: descriptionTextView, attribute: .height, relatedBy: .equal, toItem: self, attribute: .height, multiplier: 0, constant: 20))
+        addConstraint(NSLayoutConstraint(item: descriptionTextView, attribute: .height, relatedBy: .equal, toItem: self, attribute: .height, multiplier: 0, constant: 30))
     }
 }
 
