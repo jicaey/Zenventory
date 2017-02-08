@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		701E91E31E4AB71E006B5896 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701E91E21E4AB71E006B5896 /* Constants.swift */; };
 		701E91E51E4ACA10006B5896 /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701E91E41E4ACA10006B5896 /* Extentions.swift */; };
+		701E91EB1E4ACBBD006B5896 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701E91EA1E4ACBBD006B5896 /* ItemCell.swift */; };
 		70834D2C1E48F956006E6954 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70834D2B1E48F956006E6954 /* AppDelegate.swift */; };
 		70834D2E1E48F956006E6954 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70834D2D1E48F956006E6954 /* HomeViewController.swift */; };
 		70834D311E48F956006E6954 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70834D2F1E48F956006E6954 /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 /* Begin PBXFileReference section */
 		701E91E21E4AB71E006B5896 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		701E91E41E4ACA10006B5896 /* Extentions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
+		701E91EA1E4ACBBD006B5896 /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		70834D281E48F956006E6954 /* Zenventory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zenventory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70834D2B1E48F956006E6954 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		70834D2D1E48F956006E6954 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -45,6 +47,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		701E91E61E4ACAFA006B5896 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				70834D401E48FD6A006E6954 /* Item.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		701E91E71E4ACB07006B5896 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				701E91EA1E4ACBBD006B5896 /* ItemCell.swift */,
+				70834D2F1E48F956006E6954 /* Main.storyboard */,
+				70834D371E48F956006E6954 /* LaunchScreen.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		701E91E81E4ACB12006B5896 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				70834D2B1E48F956006E6954 /* AppDelegate.swift */,
+				70834D2D1E48F956006E6954 /* HomeViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		701E91E91E4ACB26006B5896 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				701E91E21E4AB71E006B5896 /* Constants.swift */,
+				701E91E41E4ACA10006B5896 /* Extentions.swift */,
+				70E515401E49114300CCF7E6 /* DataStore.swift */,
+				70834D351E48F956006E6954 /* Assets.xcassets */,
+				70834D3A1E48F956006E6954 /* Info.plist */,
+				70834D321E48F956006E6954 /* Zenventory.xcdatamodeld */,
+			);
+			name = Support;
+			sourceTree = "<group>";
+		};
 		70834D1F1E48F956006E6954 = {
 			isa = PBXGroup;
 			children = (
@@ -64,17 +106,10 @@
 		70834D2A1E48F956006E6954 /* Zenventory */ = {
 			isa = PBXGroup;
 			children = (
-				70E515401E49114300CCF7E6 /* DataStore.swift */,
-				70834D2B1E48F956006E6954 /* AppDelegate.swift */,
-				70834D401E48FD6A006E6954 /* Item.swift */,
-				701E91E21E4AB71E006B5896 /* Constants.swift */,
-				701E91E41E4ACA10006B5896 /* Extentions.swift */,
-				70834D2D1E48F956006E6954 /* HomeViewController.swift */,
-				70834D2F1E48F956006E6954 /* Main.storyboard */,
-				70834D351E48F956006E6954 /* Assets.xcassets */,
-				70834D371E48F956006E6954 /* LaunchScreen.storyboard */,
-				70834D3A1E48F956006E6954 /* Info.plist */,
-				70834D321E48F956006E6954 /* Zenventory.xcdatamodeld */,
+				701E91E61E4ACAFA006B5896 /* Model */,
+				701E91E71E4ACB07006B5896 /* View */,
+				701E91E81E4ACB12006B5896 /* Controller */,
+				701E91E91E4ACB26006B5896 /* Support */,
 			);
 			path = Zenventory;
 			sourceTree = "<group>";
@@ -152,6 +187,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				701E91EB1E4ACBBD006B5896 /* ItemCell.swift in Sources */,
 				70E515411E49114300CCF7E6 /* DataStore.swift in Sources */,
 				70834D2E1E48F956006E6954 /* HomeViewController.swift in Sources */,
 				70834D2C1E48F956006E6954 /* AppDelegate.swift in Sources */,
