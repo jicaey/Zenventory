@@ -45,7 +45,7 @@ class ItemCell: BaseCell {
     
     let categoryImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "placeholderCategoryImage")
+        imageView.backgroundColor = Constants.Colors.green
         imageView.contentMode = .scaleAspectFit
         // half of the width and height of the image size
         imageView.layer.cornerRadius = 22

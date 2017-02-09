@@ -2,17 +2,15 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "1486602816_dolly.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "1486602813_dolly.png",
+      "filename" : "appbar.outlet.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "1486602811_dolly.png",
       "scale" : "3x"
     }
   ],

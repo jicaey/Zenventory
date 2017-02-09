@@ -32,11 +32,11 @@ enum Category {
     // TODO: - unwrap
     var image: UIImage {
         switch self {
-        case .wardrobe: return UIImage(named: "shoes")!
-        case .everydayCarry: return UIImage(named: "bag")!
-        case .core: return UIImage(named: "dolly")!
-        case .consumables: return UIImage(named: "recycle")!
-        case .electronics: return UIImage(named: "phone")!
+        case .wardrobe: return UIImage(named: "shirt")!
+        case .everydayCarry: return UIImage(named: "manBag")!
+        case .core: return UIImage(named: "infinite")!
+        case .consumables: return UIImage(named: "candle")!
+        case .electronics: return UIImage(named: "outlet")!
         }
     }
 }
