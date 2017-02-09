@@ -28,6 +28,7 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         collectionView?.backgroundColor = Constants.Colors.cream
         
         // Register cell identifier
+        // Add Identifier to dataStore
         collectionView?.register(ItemCell.self, forCellWithReuseIdentifier: "cell")
         
         // test data
@@ -35,6 +36,9 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         
         // menuBar
         setupMenuBar()
+        
+        collectionView?.contentInset = UIEdgeInsets(top: 50, left: 0, bottom: 0, right: 0)
+        collectionView?.scrollIndicatorInsets = UIEdgeInsets(top: 50, left: 0, bottom: 0, right: 0)
     }
     
     let menuBar: MenuBar = {
@@ -57,9 +61,9 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ItemCell
         
-        cell.itemNameLabel.text = "\(store.inventory[indexPath.row].name)"
+        cell.itemNameLabel.text = "\(store.inventory[indexPath.item].name)"
         cell.descriptionTextView.text = "\(store.inventory[indexPath.row].notes)"
-        cell.categoryImageView.image = store.inventory[indexPath.row].category.image
+        cell.categoryImageView.image = store.inventory[indexPath.item].category.image
         
         
         return cell

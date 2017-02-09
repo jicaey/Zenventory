@@ -27,6 +27,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // navigation bar tweaks
         UINavigationBar.appearance().barTintColor = Constants.Colors.darkBlue
+        // remove nav bar shadow
+        UINavigationBar.appearance().shadowImage = UIImage()
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
         
         // status bar tweaks
         application.statusBarStyle = .lightContent

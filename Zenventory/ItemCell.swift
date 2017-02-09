@@ -78,7 +78,7 @@ class ItemCell: UICollectionViewCell {
         addSubview(descriptionTextView)
         
         // Auto Layout with Visual Format
-        // TODO: - Readup on this contraint format
+        // TODO: - Readup on this contraint format then Change to Anchors
         // horizontal contraints
         addContraintsWith(format: "H:|-16-[v0]-16-|", views: [thumbnailItemImageView])
         addContraintsWith(format: "H:|[v0]|", views: [separatorView])
