@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class ItemCell: UICollectionViewCell {
+class BaseCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
@@ -18,6 +18,13 @@ class ItemCell: UICollectionViewCell {
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been initialized")
     }
+    
+    func setupViews() {
+        
+    }
+}
+
+class ItemCell: BaseCell {
     
     let thumbnailItemImageView: UIImageView = {
         let imageView = UIImageView()
@@ -70,7 +77,9 @@ class ItemCell: UICollectionViewCell {
     }()
     
     
-    func setupViews() {
+    override func setupViews() {
+        super.setupViews()
+        
         addSubview(thumbnailItemImageView)
         addSubview(separatorView)
         addSubview(categoryImageView)

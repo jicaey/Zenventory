@@ -9,7 +9,7 @@
 import UIKit
 
 class MenuBar: UIView {
-    
+    // Rename and add to contants
     let cellId = "cellId"
     
     lazy var collectionView: UICollectionView = {
@@ -24,7 +24,7 @@ class MenuBar: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView.register(MenuBarCell.self, forCellWithReuseIdentifier: cellId)
         
         addSubview(collectionView)
         addContraintsWith(format: "H:|[v0]|", views: [collectionView])
@@ -66,5 +66,15 @@ extension MenuBar: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
-    
 }
+
+class MenuBarCell: BaseCell {
+   
+    override func setupViews() {
+        super.setupViews()
+        
+        
+    }
+}
+
+
