@@ -46,7 +46,6 @@ extension MenuBar: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
-        cell.backgroundColor = Constants.Colors.darkBlue
         
         return cell
     }
@@ -59,7 +58,6 @@ extension MenuBar: UICollectionViewDelegate {
 extension MenuBar: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let itemSize = CGSize(width: frame.width / 4, height: frame.height)
-        
         return itemSize
     }
     
@@ -69,11 +67,24 @@ extension MenuBar: UICollectionViewDelegateFlowLayout {
 }
 
 class MenuBarCell: BaseCell {
+    
+    let imageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "home")
+        
+        return imageView
+    }()
    
     override func setupViews() {
         super.setupViews()
         
+        addSubview(imageView)
         
+        addContraintsWith(format: "H:|[v0(28)]|", views: [imageView])
+        addContraintsWith(format: "V:|[v0(28)]|", views: [imageView])
+        
+        addConstraint(NSLayoutConstraint(item: imageView, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0))
+        addConstraint(NSLayoutConstraint(item: imageView, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1, constant: 0))
     }
 }
 
