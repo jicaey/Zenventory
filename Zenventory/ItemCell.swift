@@ -71,7 +71,7 @@ class ItemCell: BaseCell {
         textView.text = "Item Description • Category: Consumable • Last Date Used: 2 days ago"
         textView.textContainerInset = UIEdgeInsets(top: 0, left: -4, bottom: 0, right: 0)
         textView.textColor = Constants.Colors.midBlue
-        textView.backgroundColor = Constants.Colors.cream
+        textView.backgroundColor = Constants.Colors.grey
         
         return textView
     }()

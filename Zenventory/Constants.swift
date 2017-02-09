@@ -17,6 +17,7 @@ struct Constants {
         static let midBlue = UIColor(red: 0.58, green: 0.73, blue: 0.71, alpha: 1.0)
         static let lightBlue = UIColor(red: 0.79, green: 0.85, blue: 0.80, alpha: 1.0)
         static let cream = UIColor(red: 0.97, green: 0.93, blue: 0.83, alpha: 1.0)
+        static let grey = UIColor(red: 0.9294, green: 0.9294, blue: 0.9294, alpha: 1.0)
     }
     
     struct FontSizes {
