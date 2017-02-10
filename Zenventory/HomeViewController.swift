@@ -36,9 +36,13 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         
         // menuBar
         setupMenuBar()
+        setupNavBarButtons()
         
+        // adjust collectionview to menubar
         collectionView?.contentInset = UIEdgeInsets(top: 50, left: 0, bottom: 0, right: 0)
         collectionView?.scrollIndicatorInsets = UIEdgeInsets(top: 50, left: 0, bottom: 0, right: 0)
+        
+        
     }
     
     let menuBar: MenuBar = {
@@ -51,6 +55,22 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         view.addContraintsWith(format: "H:|[v0]|", views: [menuBar])
         view.addContraintsWith(format: "V:|[v0(50)]", views: [menuBar])
     }
+    
+    func setupNavBarButtons() {
+        let searchImage = UIImage(named: "magnify")?.withRenderingMode(.alwaysOriginal)
+        let searchBarButtonItem = UIBarButtonItem(image: searchImage, style: .plain, target: self, action: #selector(handleSearch))
+        print("\(searchImage?.size.height)")
+        print("\(searchImage?.size.width)")
+        
+        let moreImage = UIImage(named: "more")?.withRenderingMode(.alwaysOriginal)
+        let moreBarButtonItem = UIBarButtonItem(image: moreImage, style: .plain, target: self, action: #selector(handleMore))
+        
+        navigationItem.setRightBarButtonItems([moreBarButtonItem, searchBarButtonItem], animated: true)
+    }
+    
+    func handleSearch() {}
+    
+    func handleMore() {}
     
     
     // Mark: - UICollectionViewController
